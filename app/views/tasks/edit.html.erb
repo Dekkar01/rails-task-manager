@@ -1,0 +1,16 @@
+
+<div class="container mt-5">
+  <h1>Edit task</h1>
+  <p><%= @task.title %></p>
+  <p><%= @task.details  %></p>
+  <%= form_with model: @task do |t| %>
+    <%= t.label :title %>
+    <%= t.text_field :title %>
+    <%= t.label :details %>
+    <%= t.text_field :details %>
+    <%= t.check_box :completed %>
+    <%= t.submit %>
+  <% end %>
+</div>
+
+<%= link_to "BAck", tasks_path(@task) %>
